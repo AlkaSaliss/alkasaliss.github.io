@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 import { rowProcessor } from '../../../utils/irisUtils'
 
@@ -18,7 +18,6 @@ const IrisTsne = () => {
   const [perplexity, setPerplexity] = useState(10)
 
   const svgRef = useRef(null)
-  const animationRef = useRef(null)
 
   useEffect(() => {
     const dimensions = getDimensions()
@@ -78,11 +77,8 @@ const IrisTsne = () => {
 
   useEffect(() => {
     if (isPlaying) {
-      animationRef.current = requestAnimationFrame(animate)
-    } else {
-      cancelAnimationFrame(animationRef.current)
+      animate()
     }
-    return () => cancelAnimationFrame(animationRef.current)
   }, [isPlaying])
 
   const getDimensions = () => {
@@ -148,24 +144,23 @@ const IrisTsne = () => {
     setIsPlaying(false)
   }
 
-  const animate = useCallback(() => {
-    if (!isPlaying) return
+  const animate = async () => {
+    while (isPlaying) {
+      tsne.step()
+      const embeddings = tsne.getSolution()
+      const { xScale, yScale } = computeScales(embeddings)
 
-    tsne.step()
-    const embeddings = tsne.getSolution()
-    const { xScale, yScale } = computeScales(embeddings)
-
-    circleGroup.select('.circle-tsne-point')
-      .transition().duration(1000)
-      .delay((d, i) => i * 10)
-      .attr('cx', (d, i) => xScale(embeddings[i][0]))
-      .attr('cy', (d, i) => yScale(embeddings[i][1]))
-      .attr('r', 10)
-      .attr('fill', d => colorScale(d.Species))
-      .attr('fill-opacity', 0.8)
-
-    animationRef.current = requestAnimationFrame(() => animate())
-  }, [isPlaying, tsne, circleGroup, colorScale])
+      circleGroup.select('.circle-tsne-point')
+        .transition().duration(1000)
+        .delay((d, i) => i * 10)
+        .attr('cx', (d, i) => xScale(embeddings[i][0]))
+        .attr('cy', (d, i) => yScale(embeddings[i][1]))
+        .attr('r', 10)
+        .attr('fill', d => colorScale(d.Species))
+        .attr('fill-opacity', 0.8)
+      await myDelayer(1020)
+    }
+  }
 
   const dimensions = getDimensions()
 

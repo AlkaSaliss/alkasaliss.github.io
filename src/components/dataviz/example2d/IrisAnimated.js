@@ -35,7 +35,7 @@ export default class IrisAnimated extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize)
-    d3.csv('static/data/Iris.csv', rowProcessor).then(data => {
+    d3.csv('/static/data/Iris.csv', rowProcessor).then(data => {
       this.setState({ data })
     })
   }
@@ -100,7 +100,7 @@ export default class IrisAnimated extends React.Component {
       return (
         <div className="flex flex-col items-center">
           <div className="text-center mb-2">
-            <p className="text-lg">
+            <p className="text-base">
               Change interactively X or Y axis using dropdown Menus. Hover on a given point to display (x, y) values. Click on any point from plot or legend to highlight all points from the same color. Click again to unselect.
             </p>
           </div>
@@ -127,7 +127,9 @@ export default class IrisAnimated extends React.Component {
               <svg width={dimensions.width} height={dimensions.height}>
                 <g transform={`translate(${dimensions.margins.left}, ${dimensions.margins.top})`}>
                   <Axes axisProps={{ xProps, yProps }} />
-                  <text x={dimensions.width * 0.25} y={-dimensions.height / 27} fontSize='1.25em'>Iris Scatter Plot</text>
+                  <text x={dimensions.width * 0.25} y={-dimensions.height / 27} className='text-2xl' fill='currentColor'>
+                    Iris Flower Data Visualizer
+                  </text>
                   <ScatterCircles
                     data={data}
                     columns={{ xColumn, yColumn, catColumn: 'Species' }}

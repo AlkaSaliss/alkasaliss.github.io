@@ -4,7 +4,7 @@ import Skills from './Skills'
 import Education from './Education'
 import Experience from './Experience'
 
-export default (props) => {
+const Resume = (props) => {
   return (
     <div className="flex h-screen overflow-hidden" onClick={props.handleClickAway}>
       <div className="w-2/5 bg-gray-800  p-4">
@@ -158,3 +158,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Resume

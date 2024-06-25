@@ -1,4 +1,4 @@
-export const rowProcessor = (row) => {
+export const rowProcessor = (row, index, columns) => {
     row.PetalLengthCm = +row.PetalLengthCm
     row.PetalWidthCm = +row.PetalWidthCm
     row.SepalLengthCm = +row.SepalLengthCm

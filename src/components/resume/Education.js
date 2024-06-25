@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+const Education = (props) => {
   return (
     <div className="education p-4">
       <div className="grid grid-cols-12 gap-4">
@@ -16,3 +16,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Education

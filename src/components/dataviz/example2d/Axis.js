@@ -2,7 +2,7 @@ import React from 'react'
 import * as d3 from 'd3'
 import * as d3Axis from 'd3-axis'
 
-export default class Axis extends React.Component {
+class Axis extends React.Component {
   componentDidMount() {
     this.renderAxis()
   }
@@ -83,3 +83,5 @@ export default class Axis extends React.Component {
     )
   }
 }
+
+export default Axis

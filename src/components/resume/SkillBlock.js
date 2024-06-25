@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+const SkillBlock = (props) => {
   return (
     <div className="grid grid-cols-12 gap-4">
       <div className="col-span-2 font-bold text-lg">
@@ -12,3 +12,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default SkillBlock

@@ -1,7 +1,7 @@
 import React from 'react'
 import Axis from './Axis'
 
-export default ({ axisProps }) => {
+const Axes = ({ axisProps }) => {
   const { xProps, yProps } = axisProps
 
   return (
@@ -11,3 +11,5 @@ export default ({ axisProps }) => {
     </g>
   )
 }
+
+export default Axes

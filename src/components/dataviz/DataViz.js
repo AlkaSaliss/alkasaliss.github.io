@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import IrisAnimated from './example2d/IrisAnimated';
-import Iris3D from './example3d/Iris3DAnimated';
-import IrisTsne from './exampletSNE/irisTsne';
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import IrisAnimated from './example2d/IrisAnimated'
+import Iris3D from './example3d/Iris3DAnimated'
+import IrisTsne from './exampletSNE/irisTsne'
 
 
 const TabPanel = ({ children, value, index }) => {
@@ -19,43 +19,43 @@ const TabPanel = ({ children, value, index }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
-};
+}
 
 const DataViz = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0)
 
   const handleChange = (newValue) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
 
   return (
-    <div className="w-full h-full bg-gray-100">
-      <div className="w-full bg-white">
-        <nav className="flex justify-start">
+    <div className="w-full h-full bg-gray-800">
+      <div className="w-full">
+        <nav className="flex justify-center">
           <button
-            className={`px-4 py-2 focus:outline-none ${value === 0 ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
+            className={`px-4 py-2 focus:outline-none ${value === 0 ? 'border-b' : 'border-b border-slate-500'}`}
             onClick={() => handleChange(0)}
           >
             Iris 2D Interactive
           </button>
           <button
-            className={`px-4 py-2 focus:outline-none ${value === 1 ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
+            className={`px-4 py-2 focus:outline-none ${value === 1 ? 'border-b' : 'border-b border-slate-500'}`}
             onClick={() => handleChange(1)}
           >
-            Iris 3D Animated
+            Iris 3D plot
           </button>
           <button
-            className={`px-4 py-2 focus:outline-none ${value === 2 ? 'bg-blue-500 text-white' : 'text-gray-700'}`}
+            className={`px-4 py-2 focus:outline-none ${value === 2 ? 'border-b' : 'border-b border-slate-500'}`}
             onClick={() => handleChange(2)}
           >
-            IRIS t-SNE plot
+            IRIS t-SNE visualization
           </button>
         </nav>
       </div>
@@ -71,7 +71,7 @@ const DataViz = () => {
         </TabPanel>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DataViz;
+export default DataViz

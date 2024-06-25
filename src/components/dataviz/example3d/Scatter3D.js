@@ -11,7 +11,7 @@ import {
 } from 'three'
 import { removeChildrenNodes } from '../../../utils/irisUtils'
 
-export default ({ data, xScale, yScale, zScale, colorScale, xColumn, yColumn, zColumn }) => {
+const Scatter3D = ({ data, xScale, yScale, zScale, colorScale, xColumn, yColumn, zColumn }) => {
   const myContainer = useRef(null)
 
   useEffect(() => {
@@ -113,3 +113,5 @@ export default ({ data, xScale, yScale, zScale, colorScale, xColumn, yColumn, zC
     </div>
   )
 }
+
+export default Scatter3D

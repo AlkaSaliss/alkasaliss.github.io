@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+const Experience = (props) => {
   return (
     <div className="experience mb-8">
       <div className="grid grid-cols-12 gap-4">
@@ -19,3 +19,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Experience

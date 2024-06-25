@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) => {
+const Skill = (props) => {
   return (
     <div className="skill mb-4">
       <div className="grid grid-cols-12 gap-4 items-center">
@@ -14,3 +14,5 @@ export default (props) => {
     </div>
   )
 }
+
+export default Skill

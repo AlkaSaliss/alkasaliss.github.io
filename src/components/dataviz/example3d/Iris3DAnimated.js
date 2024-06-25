@@ -23,7 +23,7 @@ export default class Iris3D extends React.Component {
   }
 
   componentDidMount() {
-    d3.csv('static/data/Iris.csv', rowProcessor).then(data => {
+    d3.csv('/static/data/Iris.csv', rowProcessor).then(data => {
       const xExtent = d3.extent(data.map(d => d[this.state.xColumn]))
       const yExtent = d3.extent(data.map(d => d[this.state.yColumn]))
       const zExtent = d3.extent(data.map(d => d[this.state.zColumn]))
@@ -33,7 +33,6 @@ export default class Iris3D extends React.Component {
       const yScale = d3.scaleLinear().domain(yExtent).range([-1, 1])
       const zScale = d3.scaleLinear().domain(zExtent).range([-1, 1])
       const colorScale = d3.scaleOrdinal().domain(colorExtent).range(['red', 'steelblue', 'green'])
-
       this.setState({
         data,
         xScale,
@@ -75,10 +74,15 @@ export default class Iris3D extends React.Component {
   }
 
   drawLegend = (colorScale) => {
+    if (colorScale === null) {
+      return
+    }
     const legendRadius = 30
     const spacing = 30
     const legendYOffset = 50
+    // console.log("-----------------------------")
     const n = colorScale.domain().length
+    // console.log("*****************************")
 
     const legendGroup = d3.select('.legend-group-3d').selectAll('rect').data([null])
     legendGroup.enter().append('rect')
