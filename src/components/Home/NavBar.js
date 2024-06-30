@@ -10,7 +10,7 @@ const NavBar = () => {
     }
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 fixed top-0 left-0 w-full z-50">
             <div className="navbar-start">
                 <Link to="/">
                     <div className="btn btn-ghost text-xl">
@@ -21,10 +21,10 @@ const NavBar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li className="text-xl mx-5">
+                    <li className="text-xl mx-5 font-bold">
                         <Link to="/resume">Resume</Link>
                     </li>
-                    <li className="text-xl mx-5 relative">
+                    <li className="text-xl mx-5 font-bold relative">
                         <button onClick={toggleDropdown} className="flex items-center space-x-1">
                             <span>Projects</span>
                             <Icon icon={isDropdownOpen ? "mdi:chevron-up" : "mdi:chevron-down"} />
@@ -32,19 +32,16 @@ const NavBar = () => {
                         {isDropdownOpen && (
                             <ul className="absolute shadow-lg p-2 mt-10 space-y-2 rounded-lg z-10 bg-slate-700">
                                 <li className="text-base" onClick={toggleDropdown}>
-                                    <a href="#">Computer Vision</a>
+                                    <Link to="/projects/computervision">Computer Vision</Link>
                                 </li>
                                 <li className="text-base" onClick={toggleDropdown}>
-                                    <a href="#">NLP</a>
+                                    <Link to="/projects/nlp">NLP</Link>
                                 </li>
                                 <li className="text-base" onClick={toggleDropdown}>
                                     <Link to="/projects/dataviz">Data Viz</Link>
                                 </li>
                             </ul>
                         )}
-                    </li>
-                    <li className="text-xl mx-5">
-                        <a href="#">Contact</a>
                     </li>
                 </ul>
             </div>

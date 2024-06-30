@@ -25,7 +25,7 @@ const Resume = (props) => {
             ranging from public, defense, transportation, energy sectors on various subjects such as tweets analysis app, web scraping app for supply chain, Reliable AI training content creation,
             building data processing pipelines for Renewable energy datalake ...
             <br />
-            In my free time, I am mostly interested in subjects related to Computer Vision, NLP, on-device machine and data visualization.
+            In my free time, I am mostly interested in subjects related to Computer Vision, NLP, on-device machine learning and data visualization.
             That's why I explore high performant languages (C/C++,  Rust) and web/mobile development (React/react-native, Kotlin)
             You can find some of my side projects on this website and also
             <a href='https://github.com/AlkaSaliss?tab=repositories' rel="noopener noreferrer" target='_blank' className="text-blue-500"> on github.</a>
