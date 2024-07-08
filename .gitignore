@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/ml_model_training_scripts/output
+*.onnx
+src/ml_model_training_scripts/*.csv

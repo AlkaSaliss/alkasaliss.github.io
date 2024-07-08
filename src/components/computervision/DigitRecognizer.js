@@ -31,9 +31,7 @@ const DigitRecognizer = () => {
   const barTitle = 'Predicted Digit'
 
   const loadONNXModel = async () => {
-    console.log("loading model.........")
     await session.loadModel(MODEL_URL)
-    console.log("model loaded.........")
   }
 
   useEffect(() => {
@@ -61,7 +59,6 @@ const DigitRecognizer = () => {
     canvasContext.strokeStyle = 'black'
     canvasContext.lineWidth = 20
     contextRef.current = canvasContext
-    console.log("before load")
 
     loadONNXModel()
     return () => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import DigitRecognizer from './DigitRecognizer'
+import DemoClassi from './DemoClassi'
 
 
 const TabPanel = ({ children, value, index }) => {
@@ -62,7 +63,7 @@ const ComputerVision = ({navBarHeight}) => {
           <DigitRecognizer />
         </TabPanel>
         <TabPanel value={value} index={1}>
-        <div>Democlassi</div>
+          <DemoClassi />
         </TabPanel>
         <TabPanel value={value} index={2}>
         <div>TBD</div>
