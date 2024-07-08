@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Icon } from '@iconify/react'
 import { Link } from 'react-router-dom'
 
-const NavBar = () => {
+const NavBar = ({ setNavBarHeight }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const navBarRef = useRef(null)
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen)
     }
 
+    useEffect(() => {
+        if (navBarRef.current) {
+            setNavBarHeight(navBarRef.current.offsetHeight)
+        }
+    }, [setNavBarHeight])
+
     return (
-        <div className="navbar bg-base-100 fixed top-0 left-0 w-full z-50">
+        <div ref={navBarRef} className="navbar bg-base-100 fixed top-0 left-0 w-full z-50">
             <div className="navbar-start">
                 <Link to="/">
                     <div className="btn btn-ghost text-xl">

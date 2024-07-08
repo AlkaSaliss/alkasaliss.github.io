@@ -26,7 +26,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 }
 
-const ComputerVision = () => {
+const ComputerVision = ({navBarHeight}) => {
   const [value, setValue] = useState(0)
 
   const handleChange = (newValue) => {
@@ -34,8 +34,8 @@ const ComputerVision = () => {
   }
 
   return (
-    <div className="w-full h-full bg-gray-800">
-      <div className="w-full">
+    <div className="w-full h-full bg-gray-800" style={{ paddingTop: navBarHeight }}>
+      <div className="w-full relative">
         <nav className="flex justify-center">
           <button
             className={`px-4 py-2 focus:outline-none ${value === 0 ? 'border-b' : 'border-b border-slate-500'}`}

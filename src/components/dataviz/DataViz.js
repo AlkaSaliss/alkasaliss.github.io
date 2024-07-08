@@ -28,7 +28,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 }
 
-const DataViz = () => {
+const DataViz = ({ navBarHeight }) => {
   const [value, setValue] = useState(0)
 
   const handleChange = (newValue) => {
@@ -36,7 +36,7 @@ const DataViz = () => {
   }
 
   return (
-    <div className="w-full h-full bg-gray-800">
+    <div className="w-full h-full bg-gray-800" style={{ paddingTop: navBarHeight }}>
       <div className="w-full">
         <nav className="flex justify-center">
           <button

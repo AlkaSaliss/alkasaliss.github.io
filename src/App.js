@@ -1,5 +1,6 @@
 //App.js
 
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/Home/NavBar'
@@ -11,16 +12,18 @@ import NLP from './components/nlp/NLP'
 
 function App() {
 
+    const [navBarHeight, setNavBarHeight] = useState(0)
+
     return (
         <div className="app-container">
             <Router>
-                <NavBar />
+                <NavBar setNavBarHeight={setNavBarHeight}/>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/resume" element={<Resume />} />
-                    <Route path="/projects/dataviz" element={<DataViz />} />
-                    <Route path="/projects/computervision" element={<ComputerVision />} />
-                    <Route path="/projects/nlp" element={<NLP />} />
+                    <Route path="/projects/dataviz" element={<DataViz navBarHeight={navBarHeight}/>} />
+                    <Route path="/projects/computervision" element={<ComputerVision navBarHeight={navBarHeight}/>} />
+                    <Route path="/projects/nlp" element={<NLP navBarHeight={navBarHeight}/>} />
                 </Routes>
             </Router>
         </div>

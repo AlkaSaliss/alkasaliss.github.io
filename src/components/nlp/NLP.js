@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NLP = () => {
+const NLP = ( {navBarHeight} ) => {
   return (
     <div>NLP</div>
   )
