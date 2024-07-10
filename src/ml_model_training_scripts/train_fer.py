@@ -90,6 +90,7 @@ class TimmClassifier(L.LightningModule):
         lr_backbone=1e-5,
         finetune_backbone=False,
         class_weights=None,
+        **kwargs
     ):
         super().__init__()
         self.input_size = input_size
