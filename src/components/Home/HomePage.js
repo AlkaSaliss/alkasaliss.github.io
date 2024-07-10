@@ -10,7 +10,7 @@ import BallCanvas from './technologies/TechnoBall'
 const technologies = Array(16).fill(
     {
         name: 'Python',
-        icon: '/static/images/aws2.png',
+        icon: '/static/images/python1.png',
     }
 )
 
@@ -106,7 +106,7 @@ const HomePage = () => {
                             <div className="card-title justify-center mt-16 text-2xl">
                                 I work with following Technologies :
                             </div>
-                            <div className="grid grid-cols-4 gap-4">
+                            <div className="grid grid-cols-8 gap-4">
                                 {technologies.map((technology, idx) => (
                                     <div className="w-28 h-28" key={`${technology.name}-${idx}` }>
                                         <BallCanvas icon={technology.icon} />
