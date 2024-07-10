@@ -106,9 +106,9 @@ const HomePage = () => {
                             <div className="card-title justify-center mt-16 text-2xl">
                                 I work with following Technologies :
                             </div>
-                            <div class="grid grid-cols-4 gap-4">
-                                {technologies.map((technology) => (
-                                    <div className="w-28 h-28" key={technology.name}>
+                            <div className="grid grid-cols-4 gap-4">
+                                {technologies.map((technology, idx) => (
+                                    <div className="w-28 h-28" key={`${technology.name}-${idx}` }>
                                         <BallCanvas icon={technology.icon} />
                                     </div>
                                 ))}
