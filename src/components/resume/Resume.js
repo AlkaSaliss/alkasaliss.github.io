@@ -4,9 +4,9 @@ import Skills from './Skills'
 import Education from './Education'
 import Experience from './Experience'
 
-const Resume = (props) => {
+const Resume = ({ navBarHeight }) => {
   return (
-    <div className="flex h-screen overflow-hidden" onClick={props.handleClickAway}>
+    <div className="flex h-screen overflow-hidden" style={{ paddingTop: navBarHeight }}>
       <div className="w-2/5 bg-gray-800  p-4">
         <div className="flex flex-col items-center mt-5">
           <img alt="Profile" src="/static/images/alka3.jpg" className="rounded-full w-52 h-52" />
@@ -17,7 +17,7 @@ const Resume = (props) => {
           <p className="text-base mb-4">
             Currently working as Freelance Data Engineer consultant
           </p>
-          <p className="text-sm text-justify">
+          <p className="text-base text-justify">
             I've worked for {new Date().getFullYear() - 2018}+ years across various data science and data engineering roles.
             I started my career as a Research Engineer in machine learning for cyber security, then switched to computer vision applied to video surveillance images analysis.
             <br />

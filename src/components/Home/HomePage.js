@@ -7,24 +7,83 @@ import { motion } from 'framer-motion'
 import BallCanvas from './technologies/TechnoBall'
 
 
-const technologies = Array(16).fill(
+const main_technologies = [
     {
-        name: 'Python',
-        icon: '/static/images/python1.png',
-    }
-)
+        name: 'python',
+        icon: '/static/images/technos/python.png',
+    },
+    {
+        name: 'linux',
+        icon: '/static/images/technos/linux.png',
+    },
+    {
+        name: 'git',
+        icon: '/static/images/technos/git.png',
+    },
+    {
+        name: 'sql',
+        icon: '/static/images/technos/sql.png',
+    },
+    {
+        name: 'aws',
+        icon: '/static/images/technos/aws.png',
+    },
+    {
+        name: 'docker',
+        icon: '/static/images/technos/docker.png',
+    },
+    {
+        name: 'scikitlearn',
+        icon: '/static/images/technos/scikitlearn.png',
+    },
+    {
+        name: 'pytorch',
+        icon: '/static/images/technos/pytorch.png',
+    },
+]
+
+const mobile_web_technologies = [
+    {
+        name: 'cpp',
+        icon: '/static/images/technos/cpp.png',
+    },
+    {
+        name: 'rust',
+        icon: '/static/images/technos/rust.png',
+    },
+    {
+        name: 'react',
+        icon: '/static/images/technos/react.png',
+    },
+    {
+        name: 'reactnative',
+        icon: '/static/images/technos/reactnative.png',
+    },
+    {
+        name: 'kotlin',
+        icon: '/static/images/technos/kotlin.png',
+    },
+    {
+        name: 'onnx',
+        icon: '/static/images/technos/onnx.png',
+    },
+    {
+        name: 'opencv',
+        icon: '/static/images/technos/opencv.png',
+    },
+]
 
 const technologiesVariant = {
     hidden: {
-        y: '100vh', // Offscreen below
+        y: '100vh',
         opacity: 0
     },
     visible: {
-        y: 0, // Slide up to its position
+        y: 0,
         opacity: 1,
         transition: {
-            duration: 1.5, // Adjust duration as needed
-            ease: 'easeInOut' // Adjust easing as needed
+            duration: 1.5,
+            ease: 'easeInOut'
         }
     }
 }
@@ -32,13 +91,14 @@ const technologiesVariant = {
 
 const HomePage = () => {
     const [displayML, setDisplayML] = useState(false)
+    const [displayRole, setDisplayRole] = useState(false)
     const [displayTechnologies, setDisplayTechnologies] = useState(false)
 
     return (
 
         <div className="homepage">
             <div style={{
-                backgroundImage: `url(/static/images/alka0.jpg)`,
+                backgroundImage: `url(/static/images/alka6.png)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: '100%',
@@ -52,28 +112,59 @@ const HomePage = () => {
             </div>
             <div style={{
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100%'
             }}>
-                <div className="card w-1/2 h-1/3 bg-base-100 shadow-xl opacity-75 mt-96" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+
+                {
+                    displayTechnologies &&
+                    <div className='justify-center w-2/5 mt-48 pl-4'>
+                        <motion.div variants={technologiesVariant} initial="hidden" animate="visible">
+                            <div className="card-title justify-center my-6 text-base text-center">
+                                I work with following Technos / Tools :
+                            </div>
+                            <div className="grid grid-cols-4 gap-4 place-items-center">
+                                {main_technologies.map((technology, idx) => (
+                                    <div className="w-28 h-28" key={`${technology.name}-${idx}`}>
+                                        <BallCanvas icon={technology.icon} />
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                }
+
+
+                <div className="card w-1/2 h-1/3 bg-base-100 shadow-xl opacity-75 mt-48 mx-20" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div className="card-body">
-                        <h2 className="card-title justify-center mt-5">
+                        <h2 className="card-title justify-center text-center">
                             <TypeAnimation
-                                sequence={['Mahamadou ABOUBACAR', 1000, () => setDisplayML(true)]}
-                                speed={50}
-                                style={{ fontSize: '1.5em' }}
+                                sequence={['Mahamadou ABOUBACAR', 1000, () => setDisplayRole(true)]}
+                                speed={75}
+                                style={{ fontSize: '1.10em' }}
                                 cursor={false}
                             />
                         </h2>
                         {
-                            displayML &&
-                            <h3 className="card-title justify-center mt-5">
+                            displayRole &&
+                            <h3 className="card-title justify-center text-center">
                                 <TypeAnimation
-                                    sequence={['Data Scientist (Computer Vision) | Data Engineer', 1000, () => setDisplayTechnologies(true)]}
-                                    speed={50}
-                                    style={{ fontSize: '1.10em' }}
+                                    sequence={['Senior Freelance', 1000, () => setDisplayML(true)]}
+                                    speed={75}
+                                    style={{ fontSize: '1.05em' }}
+                                    cursor={false}
+                                />
+                            </h3>
+                        }
+                        {
+                            displayML &&
+                            <h3 className="card-title justify-center text-center">
+                                <TypeAnimation
+                                    sequence={['Data Engineering | Data Science', 1000, () => setDisplayTechnologies(true)]}
+                                    speed={75}
+                                    style={{ fontSize: '1.0em' }}
                                     cursor={false}
                                 />
                             </h3>
@@ -101,20 +192,20 @@ const HomePage = () => {
                 </div>
                 {
                     displayTechnologies &&
-                    <>
+                    <div className='justify-center w-2/5 mt-48 pr-4'>
                         <motion.div variants={technologiesVariant} initial="hidden" animate="visible">
-                            <div className="card-title justify-center mt-16 text-2xl">
-                                I work with following Technologies :
+                            <div className="card-title justify-center mt-8 text-base text-center">
+                                Because I'm fan of on-device machine learning, I'm also familiar with web/mobile dev technologies and also some high performance languages:
                             </div>
-                            <div className="grid grid-cols-8 gap-4">
-                                {technologies.map((technology, idx) => (
-                                    <div className="w-28 h-28" key={`${technology.name}-${idx}` }>
+                            <div className="grid grid-cols-4 gap-4 place-items-center">
+                                {mobile_web_technologies.map((technology, idx) => (
+                                    <div className="w-28 h-28 place-items-center" key={`${technology.name}-${idx}`}>
                                         <BallCanvas icon={technology.icon} />
                                     </div>
                                 ))}
                             </div>
                         </motion.div>
-                    </>
+                    </div>
                 }
 
             </div>

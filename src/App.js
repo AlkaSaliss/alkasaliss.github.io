@@ -20,7 +20,7 @@ function App() {
                 <NavBar setNavBarHeight={setNavBarHeight}/>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/resume" element={<Resume navBarHeight={navBarHeight}/>} />
                     <Route path="/projects/dataviz" element={<DataViz navBarHeight={navBarHeight}/>} />
                     <Route path="/projects/computervision" element={<ComputerVision navBarHeight={navBarHeight}/>} />
                     <Route path="/projects/nlp" element={<NLP navBarHeight={navBarHeight}/>} />
