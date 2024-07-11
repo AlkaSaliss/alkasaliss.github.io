@@ -108,7 +108,7 @@ const HomePage = () => {
 
         <div className="homepage">
             <div style={{
-                backgroundImage: `url(/static/images/alka6.png)`,
+                backgroundImage: `url(/static/images/alka7.png)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: '100%',
