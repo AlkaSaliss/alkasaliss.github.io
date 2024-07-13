@@ -8,9 +8,9 @@ const Education = (props) => {
           <p className="text-lg">{props.startYear} - {props.endYear}</p>
         </div>
         <div className="col-span-8">
-          <h4 className="text-lg mt-0">{props.degree}</h4>
-          <p><strong>School: </strong>{props.schoolName}</p>
-          <p><strong>Major: </strong>{props.major}</p>
+          <h4 className="text-xl mt-0 underline italic">{props.degree}</h4>
+          <p><strong className='underline'>School: </strong>{props.schoolName}</p>
+          <p><strong className='underline'>Major: </strong>{props.major}</p>
         </div>
       </div>
     </div>

@@ -26,3 +26,21 @@ body {
     flex-grow: 1;
     position: relative;
 }
+
+.custom-list {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+  }
+  
+  .custom-list li {
+    position: relative;
+    padding-left: 1.5em; /* Space for the custom symbol */
+  }
+  
+  .custom-list li::before {
+    content: '👉🏼'; /* '•' Custom symbol (e.g., a bullet) */
+    position: absolute;
+    left: 0;
+    color: 'primary'; /* Customize the color if needed */
+  }
+  

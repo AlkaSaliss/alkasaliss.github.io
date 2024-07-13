@@ -205,7 +205,7 @@ const HomePage = () => {
                     <div className='justify-center w-2/5 mt-48 pr-4'>
                         <motion.div variants={{ ...technoDown, ...technologiesVariant }} initial="hidden" animate="visible">
                             <div className="card-title justify-center mt-8 text-base text-center">
-                                Because I'm fan of on-device machine learning, I'm also familiar with web/mobile dev technologies and also some high performance languages:
+                                I'm also interested a lot in on device machine learning, and that's why I've worked on some side projects to familiarize with high performance languages and web/mobile technologies:
                             </div>
                             <div className="grid grid-cols-4 gap-4 place-items-center">
                                 {mobile_web_technologies.map((technology, idx) => (

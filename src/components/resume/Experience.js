@@ -8,11 +8,22 @@ const Experience = (props) => {
           <p className="text-lg">{props.startYear} - {props.endYear}</p>
         </div>
         <div className="col-span-8">
-          <h4 className="text-lg mt-0">{props.jobName}</h4>
-          <p><strong>Company: </strong>{props.company} | <strong>Team: </strong>{props.team}</p>
-          <p><strong>Subject: </strong>{props.subject}</p>
-          <p><strong>Methods: </strong>{props.methods}</p>
-          <p><strong>Tools: </strong>{props.tools}</p>
+          <h4 className="text-xl mt-0 underline italic">{props.jobName}</h4>
+          <p><strong className='underline'>Company: </strong>{props.company} | <strong className='underline'>Team: </strong>{props.team}</p>
+          <div>
+            <strong className='underline'>Subject: </strong>
+            {props.showSubjectList ? (
+              <ul className="custom-list">
+                {props.subject.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <span>{props.subject}</span>
+            )}
+          </div>
+          <p><strong className='underline'>Methods: </strong>{props.methods}</p>
+          <p><strong className='underline'>Tools: </strong>{props.tools}</p>
           <p>{props.jobDescription}</p>
         </div>
       </div>

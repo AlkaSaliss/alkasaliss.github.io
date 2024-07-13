@@ -50,12 +50,6 @@ const ComputerVision = ({navBarHeight}) => {
           >
             Visual Emotion Classifier
           </button>
-          <button
-            className={`px-4 py-2 focus:outline-none ${value === 2 ? 'border-b' : 'border-b border-slate-500'}`}
-            onClick={() => handleChange(2)}
-          >
-            TBD
-          </button>
         </nav>
       </div>
       <div className="p-4">
@@ -64,9 +58,6 @@ const ComputerVision = ({navBarHeight}) => {
         </TabPanel>
         <TabPanel value={value} index={1}>
           <DemoClassi />
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-        <div>TBD</div>
         </TabPanel>
       </div>
     </div>

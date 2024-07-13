@@ -22,7 +22,7 @@ const NavBar = ({ setNavBarHeight }) => {
                 <Link to="/">
                     <div className="btn btn-ghost text-xl">
                         <Icon icon="gravity-ui:terminal" />
-                        Mahamadou.Tech
+                        Mahamadou
                     </div>
                 </Link>
             </div>
