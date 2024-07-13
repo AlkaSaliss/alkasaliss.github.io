@@ -128,7 +128,7 @@ export default class Iris3D extends React.Component {
           <div className="flex flex-wrap justify-around mb-4">
             <div className="form-control w-56">
               <label className="label">
-                <span className="label-text">X Axis</span>
+                <span className="label-text">X</span>
               </label>
               <select
                 className="select select-bordered"
@@ -142,7 +142,7 @@ export default class Iris3D extends React.Component {
             </div>
             <div className="form-control w-56">
               <label className="label">
-                <span className="label-text">Y Axis</span>
+                <span className="label-text">Y</span>
               </label>
               <select
                 className="select select-bordered"
@@ -156,7 +156,7 @@ export default class Iris3D extends React.Component {
             </div>
             <div className="form-control w-56">
               <label className="label">
-                <span className="label-text">Z Axis</span>
+                <span className="label-text">Z</span>
               </label>
               <select
                 className="select select-bordered"
@@ -197,7 +197,7 @@ export default class Iris3D extends React.Component {
         <div className="flex flex-wrap justify-around">
           <div className="form-control w-56">
             <label className="label">
-              <span className="label-text">X Axis</span>
+              <span className="label-text">X</span>
             </label>
             <select
               className="select select-bordered"
@@ -211,7 +211,7 @@ export default class Iris3D extends React.Component {
           </div>
           <div className="form-control w-56">
             <label className="label">
-              <span className="label-text">Y Axis</span>
+              <span className="label-text">Y</span>
             </label>
             <select
               className="select select-bordered"

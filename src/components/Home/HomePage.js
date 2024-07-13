@@ -52,6 +52,10 @@ const mobile_web_technologies = [
         icon: '/static/images/technos/rust.png',
     },
     {
+        name: 'html_css',
+        icon: '/static/images/technos/html_css.png',
+    },
+    {
         name: 'react',
         icon: '/static/images/technos/react.png',
     },

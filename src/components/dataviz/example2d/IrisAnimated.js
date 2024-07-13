@@ -106,7 +106,7 @@ export default class IrisAnimated extends React.Component {
           </div>
           <div className="flex justify-center mb-4">
             <div className="form-control w-full max-w-xs mx-4">
-              <label className="label" htmlFor="x-axis-select">X Axis</label>
+              <label className="label" htmlFor="x-axis-select">X</label>
               <select className="select select-bordered" id="x-axis-select" value={xColumn} onChange={this.handleXColumnChange}>
                 {listColumns.map(col => (
                   <option key={col} value={col}>{col}</option>
@@ -114,7 +114,7 @@ export default class IrisAnimated extends React.Component {
               </select>
             </div>
             <div className="form-control w-full max-w-xs mx-4">
-              <label className="label" htmlFor="y-axis-select">Y Axis</label>
+              <label className="label" htmlFor="y-axis-select">Y</label>
               <select className="select select-bordered" id="y-axis-select" value={yColumn} onChange={this.handleYColumnChange}>
                 {listColumns.map(col => (
                   <option key={col} value={col}>{col}</option>
