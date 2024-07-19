@@ -191,12 +191,12 @@ export default function IrisAnimated() {
         <div className="w-full md:w-1/3 mb-8 md:mb-0">
           <div className="flex justify-center space-x-4 mb-8">
             <button
-              className={`btn ${isPlaying ? 'btn-error' : 'btn-primary'}`}
+              className={`btn mr-20 w-20 ${isPlaying ? '' : 'btn-success'}`}
               onClick={handlePlayClick}
             >
               {isPlaying ? 'Pause' : 'Play'}
             </button>
-            <button className="btn btn-secondary" onClick={handleResetClick}>
+            <button className="btn w-20 btn-secondary" onClick={handleResetClick}>
               Reset
             </button>
           </div>
@@ -207,7 +207,7 @@ export default function IrisAnimated() {
               min="1"
               max="20"
               value={initialEpsilon}
-              className="range"
+              className="range h-3"
               step="1"
               onChange={(e) => handleSliderChange('epsilon', parseInt(e.target.value))}
             />
@@ -219,7 +219,7 @@ export default function IrisAnimated() {
               min="5"
               max="100"
               value={initialPerplexity}
-              className="range"
+              className="range h-3"
               step="5"
               onChange={(e) => handleSliderChange('perplexity', parseInt(e.target.value))}
             />
