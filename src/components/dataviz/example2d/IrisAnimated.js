@@ -126,7 +126,7 @@ export default class IrisAnimated extends React.Component {
             {data && (
               <svg width={dimensions.width} height={dimensions.height}>
                 <g transform={`translate(${dimensions.margins.left}, ${dimensions.margins.top})`}>
-                  <Axes axisProps={{ xProps, yProps }} />
+                  <Axes axisProps={{ xProps, yProps }}/>
                   <text x={dimensions.width * 0.25} y={-dimensions.height / 27} className='text-2xl' fill='currentColor'>
                     Iris Flower Data Visualizer
                   </text>

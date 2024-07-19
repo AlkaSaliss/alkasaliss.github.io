@@ -47,7 +47,6 @@ const DemoClassi = () => {
 
     // face detection function
     const detectFace = async (faceModel) => {
-        // console.log("detectFace function called...")
         if (typeof webcamRef.current !== "undefined" &&
             webcamRef.current !== null &&
             typeof canvasRef.current !== "undefined" &&
@@ -57,7 +56,6 @@ const DemoClassi = () => {
             webcamRef.current.video.readyState === 4 &&
             isPlaying
         ) {
-            console.log("detectFace running...")
             const video = webcamRef.current.video
             const videoWidth = webcamRef.current.video.videoWidth
             const videoHeight = webcamRef.current.video.videoHeight
@@ -72,7 +70,6 @@ const DemoClassi = () => {
             const faces = await faceModel.estimateFaces(video)
             // draw faces
             requestAnimationFrame(() => drawFace(ctx, faces, video))
-            console.log("detectFace ran...")
         }
     }
 
@@ -147,7 +144,6 @@ const DemoClassi = () => {
             outputTensorGender = LABEL_GENDER[outputTensorGender]
             outputTensorRace = LABEL_RACE[outputTensorRace]
             const finalOutput = `${outputTensorFer} ${outputTensorRace} ${outputTensorGender} --- Age ${outputTensorAge.toFixed(0)}`
-            console.log("Predicted: ", finalOutput)
             return finalOutput
 
         }

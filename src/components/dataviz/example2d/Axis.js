@@ -1,23 +1,14 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 import * as d3Axis from 'd3-axis'
 
-class Axis extends React.Component {
-  componentDidMount() {
-    this.renderAxis()
-  }
+const Axis = (props) => {
+  const axisGroupRef = useRef(null)
 
-  componentDidUpdate(prevProps) {
-    this.renderAxis(prevProps)
-  }
-
-  renderAxis = (prevProps) => {
-    const orient = this.props.orient
-    const scale = this.props.scale
-    const axisLabel = this.props.axisLabel
-    const axisLabelText = this.props.axisLabelText
-
+  const renderAxis = (prevProps) => {
+    const { orient, scale, axisLabel, axisLabelText } = props
     const axisClassPrefix = orient === 'Left' ? 'y' : 'x'
+
     if (prevProps && prevProps.axisLabel) {
       d3.selectAll(`text.${axisClassPrefix}axis-label-${prevProps.axisLabel}`).remove()
     }
@@ -32,14 +23,14 @@ class Axis extends React.Component {
       .scale(scale)
       .tickPadding([5])
 
-    const selectedAxis = d3.select(this.axisGroup).call(axis)
+    const selectedAxis = d3.select(axisGroupRef.current).call(axis)
 
     if (axisLabel) {
-      let { axisLabelPositionX, axisLabelPositionY } = this.props.axisLabelPositions
+      let { axisLabelPositionX, axisLabelPositionY } = props.axisLabelPositions
       axisLabelPositionX = orient === 'Left' ? -axisLabelPositionX : axisLabelPositionX
       axisLabelPositionY = orient === 'Left' ? -axisLabelPositionY : axisLabelPositionY
 
-      selectedAxis.append('text').attr('class', `${axisClassPrefix}axis-label-${axisLabel}`)
+      selectedAxis.append('text').attr('class', `${axisClassPrefix}axis-label-${axisLabel} text-lg`)
 
       let labelTextSelector = d3.selectAll(`text.${axisClassPrefix}axis-label-${axisLabel}`).data([null])
 
@@ -52,36 +43,41 @@ class Axis extends React.Component {
         .attr('fill', 'black')
         .text(axisLabelText)
         .attr('font-family', 'sans-serif')
-        .attr('font-size', '2vmin')
+        .attr('fill', 'currentColor')
         .attr('transform', rotation)
         .exit()
         .remove()
 
       if (orient === 'Bottom') {
-        const innerHeight = this.props.innerHeight
+        const { innerHeight } = props
         selectedAxis.selectAll('g.tick line')
           .attr('y2', -innerHeight)
           .attr('opacity', 0.2)
       } else {
-        const innerWidth = this.props.innerWidth
+        const { innerWidth } = props
         selectedAxis.selectAll('g.tick line')
           .attr('x2', innerWidth)
           .attr('opacity', 0.2)
       }
     }
 
-    const removeTickLine = this.props.removeTickLine
+    const { removeTickLine } = props
     if (removeTickLine) {
       selectedAxis.selectAll(removeTickLine).remove()
     }
   }
 
-  render() {
-    const translate = this.props.translate
-    return (
-      <g transform={translate} ref={e => this.axisGroup = e}></g>
-    )
-  }
+  useEffect(() => {
+    renderAxis()
+
+    return () => {
+
+    }
+  }, [props])
+
+  return (
+    <g transform={props.translate} ref={axisGroupRef}></g>
+  )
 }
 
 export default Axis
