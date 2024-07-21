@@ -1,21 +1,13 @@
-// Skill.js
-
 import React from 'react'
 
-const skillLevels = [
-  { value: 0, label: 'Beginner' },
-  { value: 1, label: 'Intermediate' },
-  { value: 2, label: 'Advanced' },
-  { value: 3, label: 'Expert' },
-];
 
 const Skill = (props) => {
   const getSkillLabel = (progress) => {
-    if (progress >= 75) return 'Expert';
-    if (progress >= 50) return 'Advanced';
-    if (progress >= 25) return 'Intermediate';
-    return 'Beginner';
-  };
+    if (progress >= 75) return 'Expert'
+    if (progress >= 50) return 'Advanced'
+    if (progress >= 25) return 'Intermediate'
+    return 'Beginner'
+  }
 
   return (
     <div className="skill mb-4">
@@ -31,4 +23,4 @@ const Skill = (props) => {
   )
 }
 
-export default Skill;
+export default Skill

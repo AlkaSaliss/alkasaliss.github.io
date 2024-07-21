@@ -120,10 +120,12 @@ export default function IrisAnimated() {
       setTsne(tsne)
       setCircleGroup(circleGroup)
     })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
     drawCircles()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying, tsne, circleGroup, colorScale])
 
   

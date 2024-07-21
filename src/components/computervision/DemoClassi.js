@@ -177,6 +177,7 @@ const DemoClassi = () => {
             sessionRagRef.current = new InferenceSession({ backendHint: 'webgl' })
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isPlaying])
 
     return (
