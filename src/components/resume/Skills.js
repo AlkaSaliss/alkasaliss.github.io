@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Skill = (props) => {
   const getSkillLabel = (progress) => {
     if (progress >= 75) return 'Expert'
@@ -11,12 +10,12 @@ const Skill = (props) => {
 
   return (
     <div className="skill mb-4">
-      <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-4 text-right">
-          <span>{props.skill}</span>
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-2 md:gap-4 items-center">
+        <div className="md:col-span-4 text-left md:text-right">
+          <span className="text-sm md:text-base">{props.skill}</span>
         </div>
-        <div className="col-span-8 flex items-center">
-          <span className="skill-label">{getSkillLabel(props.progress)}</span>
+        <div className="md:col-span-8 flex items-center">
+          <span className="skill-label text-sm md:text-base">{getSkillLabel(props.progress)}</span>
         </div>
       </div>
     </div>
