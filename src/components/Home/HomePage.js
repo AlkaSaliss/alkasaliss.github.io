@@ -136,9 +136,9 @@ const TechnologiesSection = ({ technologies, title, variants }) => (
             <div className="card-title justify-center my-6 text-base text-center">
                 {title}
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 place-items-center">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-4 place-items-center">
                 {technologies.map((technology, idx) => (
-                    <div className="w-20 h-20 md:w-28 md:h-28" key={`${technology.name}-${idx}`}>
+                    <div className="w-16 h-16 md:w-28 md:h-28" key={`${technology.name}-${idx}`}>
                         <BallCanvas icon={technology.icon} />
                     </div>
                 ))}
@@ -171,7 +171,7 @@ const HomePage = () => {
             
             <div className="flex flex-col md:flex-row justify-center items-center min-h-screen p-4">
                 {displayTechnologies && !isMobile && (
-                    <TechnologiesSection technologies={main_technologies} title="I work with following Technos / Tools :" variants={technoUp} />
+                    <TechnologiesSection technologies={main_technologies} title="I work mainly with following Technos / Tools :" variants={technoUp} />
                 )}
 
                 <div className="card w-full md:w-1/2 bg-base-100 shadow-xl opacity-75 mt-16 md:mt-0 mx-4 md:mx-20">
@@ -189,7 +189,7 @@ const HomePage = () => {
 
                 {displayTechnologies && isMobile && (
                     <>
-                        <TechnologiesSection technologies={main_technologies} title="I work with following Technos / Tools :" variants={technoUp} />
+                        <TechnologiesSection technologies={main_technologies} title="I work mainly with following Technos / Tools :" variants={technoUp} />
                         <TechnologiesSection technologies={mobile_web_technologies} title="I'm also interested a lot in on device machine learning, and that's why I've worked on some side projects to familiarize with high performance languages and web/mobile technologies:" variants={technoDown} />
                     </>
                 )}

@@ -80,7 +80,7 @@ const NavBar = ({ setNavBarHeight }) => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-x-0 top-0 z-50 bg-base-100 pt-16 overflow-y-auto w-1/2">
+        <div className="fixed inset-x-0 top-0 z-50 bg-base-100 pt-16 overflow-y-auto w-2/3">
           <ul className="menu p-4">
             <li className="text-xl font-bold py-2">
               <Link to="/resume" onClick={toggleMobileMenu}>
